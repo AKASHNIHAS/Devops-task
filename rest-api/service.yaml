@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-10-18T15:29:36Z"
+  labels:
+    app: restapp
+  name: rest-api
+  namespace: sampleapp
+  resourceVersion: "30649"
+  uid: 9f715af8-789d-446b-87a8-45430426b7fd
+spec:
+  clusterIP: 10.96.192.79
+  clusterIPs:
+  - 10.96.192.79
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: restapp
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
